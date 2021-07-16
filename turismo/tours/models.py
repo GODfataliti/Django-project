@@ -9,7 +9,7 @@ class Usuario(AbstractUser):
 class Tour:
     def __init__(self,id,nombre,dias):
         self.id=id
-        self.nombre=nombre
+        self.nombre=nombre 
         self.dias=dias
 
 
