@@ -111,6 +111,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+turismo/.env
 
 # Spyder project settings
 .spyderproject
