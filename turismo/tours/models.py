@@ -7,10 +7,10 @@ class Usuario(AbstractUser):
 
 
 class Tour:
-    def __init__(self,id,nombre,dias):
+    def __init__(self,id,nombre):
         self.id=id
         self.nombre=nombre 
-        self.dias=dias
+        #self.dias=dias
 
 
 class TourFactory:
