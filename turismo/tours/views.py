@@ -12,4 +12,8 @@ class HomeToursView(TemplateView):
         tourFactory=TourFactory()
         return render(request,"tours.html",{"tours": tourFactory.tours}) # "tours" es el nombre de la variable a iterar en el tours.html {% for tour in tours %}
 
-#pass
+class DetalleTourView(TemplateView):
+    def get(self, request, **kwars):
+        id=int(kwars["id"])
+        tourFactory=TourFactory()
+        return render(request, 'tour.html',{"tour": tourFactory.getTour(id)})

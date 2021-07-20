@@ -1,5 +1,6 @@
+<h1>Tours en Chile</h1>
 <ul>
 {% for tour in tours %}
-    <li>{{ tour.id }} {{tour.nombre}}</li>
+    <li><a href="/tour/{{tour.id}}">{{tour.nombre}}</a></li>
 {% endfor %}
 </ul>
