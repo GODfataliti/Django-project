@@ -4,11 +4,11 @@ from .models import Tour,TourFactory
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
-class HomePageView(TemplateView):
+class HomePageView(TemplateView,LoginRequiredMixin):
     def get(self, request, **kwars):
         return render(request, "index.html",context=None)
 
-class HomeToursView(TemplateView):
+class HomeToursView(TemplateView,LoginRequiredMixin):
     def get(self, request, **kwars):
         tourFactory=TourFactory()
         return render(request,"tours.html",{"tours": tourFactory.tours}) # "tours" es el nombre de la variable a iterar en el tours.html {% for tour in tours %}
