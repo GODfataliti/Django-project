@@ -1,29 +1,23 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser   
 
-# Create your models here.
 class Usuario(AbstractUser):
     rut = models.CharField(max_length=10)
 
+class Tour(models.Model):
+    nombre=models.CharField(max_length=60)
+    dias=models.IntegerField()
+    tours=models.Manager()
 
-class Tour:
-    def __init__(self,id,nombre,dias):
-        self.id=id
-        self.nombre=nombre 
-        self.dias=dias
+    def __str__(self):
+        return self.nombre
 
-
-class TourFactory:
+class TourFacade:
     def __init__(self):
-        self.tours=[]
-        self.tours.append(Tour(1,"Valle de la Luna",5))
-        self.tours.append(Tour(2,"Torres del Paine",15))
+        self.tourFactory=Tour.tours
     
-    def obtener_tours(self):
-        return self.tours
+    def buscarTours(self):
+        return self.tourFactory.all()
     
-    def getTour(self,id):
-        for tour in self.tours:
-            if tour.id==id:
-                return tour
-        return None
+    def buscarTour(self,id):
+        return self.tourFactory.get(id=id)
