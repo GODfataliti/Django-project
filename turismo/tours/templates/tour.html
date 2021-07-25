@@ -1,15 +1,13 @@
-<h1>Informacion del Tour</h1>
-<table>
-    <tr>
-        <td>Id</td>
-        <td>{{tour.id}}</td>
-    </tr>
-    <tr>
-        <td>Nombre</td>
-        <td>{{tour.nombre}}</td>
-    </tr>
-    <tr>
-        <td>Dias</td>
-        <td>{{tour.dias}}</td>
-    </tr>
-</table>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">{{tour.nombre}}</h1>
+    <p class="lead">Codigo de catalogo: {{tour.id}}</p>
+    <hr class="my-4">
+    <p>Tiene {{tour.dias}} dias de duracion.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Guia de Aves</a>
+    <a class="btn btn-primary btn-lg" href="/tour/{{tour.id}}/update/" role="button">Actualizar</a>
+    <a class="btn btn-primary btn-lg" href="/tour/{{tour.id}}/delete/" role="button">Borrar</a>
+</div>
+{% endblock %}
