@@ -4,6 +4,7 @@ from .models import Tour,TourFacade
 # Create your tests here.
 
 class TourTestCase(TestCase):
+    '''Esta clase define la testsuite para un Tour'''
 
     def setUp(self):
         '''Esta clase define la variables generales'''
