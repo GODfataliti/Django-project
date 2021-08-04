@@ -36,6 +36,9 @@ class TourViewsFuncionalTestCase(LiveServerTestCase):
         self.driver.find_element(By.LINK_TEXT, "Borrar").click()
         self.driver.find_element(By.CSS_SELECTOR, ".btn").click()
         self.driver.find_element(By.CSS_SELECTOR, ".active > .nav-link").click()
+        self.driver.save_screenshot("trazas/traza_test_creacionTours.png")
+        with open("trazas/traza_test_creacionTours.html","w") as file:
+            file.write(self.driver.page_source)
         self.driver.find_element(By.LINK_TEXT, "Logout").click()
         self.driver.find_element(By.CSS_SELECTOR, "html").click()
     
